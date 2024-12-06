@@ -1,6 +1,15 @@
 Changes
 =======
 
+v0.3.5
+------
+
+- Fixed python 3.12 support by replacing `imp` module with `importlib` (`PR #215
+  <https://github.com/marl/jams/pull/215>`_)
+
+- Fixed numpy 2.1.3 support by replacing `np.float_` reference with `np.float64` (`PR #218
+  <https://github.com/marl/jams/pull/218>`_)
+
 v0.3.4
 ------
 
