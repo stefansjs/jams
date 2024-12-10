@@ -24,7 +24,7 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
     - name: Install jams
-      run: pip install -e .[display,tests]
+      run: pip install -e .[display,tests] git+https://github.com/stefansjs/mir_eval.git@8c99de67e26fbc6aacd1c72cd47665ee64083ca9
     - name: Run tests
       run: |
         pytest -v --cov-report term-missing --cov jams

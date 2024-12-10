@@ -12,10 +12,6 @@ def load_source(modname, filename):
 
 version = load_source('jams.version', 'jams/version.py')
 
-# requirements
-with open('requirements.txt', 'r') as fh:
-    requirements = fh.read().splitlines()
-
 setup(
     name='jams',
     version=version.version,
@@ -40,10 +36,19 @@ setup(
     ],
     keywords='audio music json',
     license='ISC',
-    install_requires=requirements,
+    install_requires=[
+        'pandas',
+        'sortedcontainers>=2.0.0',
+        'pyrsistent<0.15; python_version=="3.4"',
+        'jsonschema>=3.0.0',
+        'numpy>=1.8.0',
+        'six',
+        'decorator',
+        'mir_eval>0.7',
+    ],
     extras_require={
         'display': ['matplotlib>=1.5.0,!=3.9.0'],
-        'tests': ['pytest', 'hypothesis', 'pytest-cov'],
+        'tests': ['pytest', 'hypothesis', 'pytest-cov', 'matplotlib'],
     },
     scripts=['scripts/jams_to_lab.py']
 )
