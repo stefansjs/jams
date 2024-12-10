@@ -3,12 +3,14 @@ from setuptools import setup, find_packages
 import importlib.util
 import importlib.machinery
 
+
 def load_source(modname, filename):
     loader = importlib.machinery.SourceFileLoader(modname, filename)
     spec = importlib.util.spec_from_file_location(modname, filename, loader=loader)
     module = importlib.util.module_from_spec(spec)
     loader.exec_module(module)
     return module
+
 
 version = load_source('jams.version', 'jams/version.py')
 
@@ -32,7 +34,9 @@ setup(
         "Intended Audience :: Developers",
         "Topic :: Multimedia :: Sound/Audio :: Analysis",
         "Programming Language :: Python :: 3.9",
-        "Programming Language :: Python :: 3.10"
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
     ],
     keywords='audio music json',
     license='ISC',
